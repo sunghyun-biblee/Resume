@@ -16,7 +16,7 @@ export const Contact = () => {
       <Title className=" after:content-['.'] after:text-blue-400 after:px-1 pb-2 border-b-2 border-blue-400">
         Contact
       </Title>
-      <ContactList className="flex flex-col justify-end gap-[20px] w-[60%]">
+      <ContactList className="flex flex-col  w-[60%]">
         <ContactItem>
           <ContactSpan>Email</ContactSpan>
           <button onClick={() => handleCopy("sunghyun543@gmail.com")}>
@@ -26,7 +26,11 @@ export const Contact = () => {
         </ContactItem>
         <ContactItem>
           <ContactSpan>Github</ContactSpan>
-          <a href="https://github.com/sunghyun-biblee">
+          <a
+            href="https://github.com/sunghyun-biblee"
+            target="_blank"
+            rel="noopender noreferrer"
+          >
             https://github.com/sunghyun-biblee
           </a>
         </ContactItem>
@@ -61,7 +65,6 @@ const ContactSpan = styled.span`
 const ContactList = styled.ul`
   display: flex;
   justify-content: end;
-  gap: 20px;
 `;
 const ContactItem = styled.li`
   transition: all 0.3s;
