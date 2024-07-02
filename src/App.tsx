@@ -11,13 +11,13 @@ import { Contact } from "components/Contact/Contact";
 function App() {
   return (
     <div className=" w-[100vw] flex flex-col justify-center items-center ">
-      <div className="py-3 px-4">
+      <div>
         <section className="max-w-[760px] w-[100%] font-pretendard ">
           <Introduce />
           <Contact></Contact>
+          <Skill />
 
           <Projects />
-          <Skill />
           <Education />
         </section>
       </div>
@@ -25,10 +25,11 @@ function App() {
   );
 }
 export const Article = styled.article`
-  margin-top: 8rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 `;
 export const Title = styled.h1`
-  margin-bottom: 2rem;
+  margin-bottom: 1.3rem;
   font-size: 2.5rem;
   line-height: 2.5rem;
   font-weight: 700;
