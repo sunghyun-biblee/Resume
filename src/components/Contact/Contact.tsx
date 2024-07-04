@@ -13,9 +13,7 @@ export const Contact = () => {
   };
   return (
     <Article>
-      <Title className=" after:content-['.'] after:text-blue-400 after:px-1 pb-2 border-b-2 border-blue-400">
-        Contact
-      </Title>
+      <Title className=" pb-2 border-b-2 border-blue-400">Contact</Title>
       <ContactList className="flex flex-col  w-[60%]">
         <ContactItem>
           <ContactSpan>Email</ContactSpan>

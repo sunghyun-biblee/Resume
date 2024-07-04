@@ -14,9 +14,8 @@ function App() {
       <div>
         <section className="max-w-[760px] w-[100%] font-pretendard ">
           <Introduce />
-          <Contact></Contact>
+          <Contact />
           <Skill />
-
           <Projects />
           <Education />
         </section>
@@ -30,8 +29,15 @@ export const Article = styled.article`
 `;
 export const Title = styled.h1`
   margin-bottom: 1.3rem;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   line-height: 2.5rem;
   font-weight: 700;
+  &::after {
+    content: ".";
+    color: rgb(96, 165, 250);
+    padding: 0px 4px;
+  }
 `;
 export default App;
+
+// "after:content-['.'] after:text-blue-400 after:px-1 pb-2 border-b-2 border-blue-400"
