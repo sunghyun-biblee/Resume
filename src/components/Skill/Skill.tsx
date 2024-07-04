@@ -5,12 +5,10 @@ import styled from "styled-components";
 
 export const Skill = () => {
   return (
-    <article className="mt-[3rem] mb-[6rem]">
-      <Title className="after:content-['.'] after:text-blue-400 after:px-1 pb-2 border-b-2 border-blue-400">
-        Skills
-      </Title>
+    <article className="my-[5rem]">
+      <Title className=" pb-2 border-b-2 border-blue-400">Skills</Title>
       <div className="p-1 mb-3 ">
-        <h1 className="mb-1  text-lg font-medium up">Front-end</h1>
+        <h1 className="mb-3  text-[1.5rem] font-semibold ">Front-end</h1>
         <ul className="flex justify-between text-[1rem]">
           {skillArray.map((item, index) => (
             <li key={item + index + "1"}>
@@ -20,10 +18,12 @@ export const Skill = () => {
         </ul>
       </div>
       <div className="p-1">
-        <h1 className="mb-1  text-lg font-medium">ETC</h1>
+        <h1 className="mb-3  text-[1.5rem] font-semibold ">ETC</h1>
         <ul className="w-[50%] flex justify-between mt-1  text-[1rem]">
-          {ETCArray.map((item) => (
-            <ETCBox key={item}>{item}</ETCBox>
+          {ETCArray.map((item, index) => (
+            <li key={item + index}>
+              <ETCBox>{item}</ETCBox>
+            </li>
           ))}
         </ul>
       </div>
@@ -38,7 +38,7 @@ const ETCBox = styled.span`
   min-width: 50px;
   display: inline-block;
   padding: 5px 10px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   border-radius: 8px;
   background-color: #dbf2ff;
   color: black;
