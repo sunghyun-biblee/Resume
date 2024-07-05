@@ -12,15 +12,15 @@ export const Contact = () => {
     }
   };
   return (
-    <Article>
-      <Title className=" pb-2 border-b-2 border-blue-400">Contact</Title>
-      <ContactList className="flex flex-col  w-[60%]">
+    <div className="w-[43%]">
+      <Title>Contact</Title>
+      <ContactList>
         <ContactItem>
           <ContactSpan>Email</ContactSpan>
           <button onClick={() => handleCopy("sunghyun543@gmail.com")}>
             sunghyun543@gmail.com
           </button>
-          <span className="text-sm text-gray-400"> (메일클릭시 복사)</span>
+          {/* <span className="text-sm text-gray-400"> (메일클릭시 복사)</span> */}
         </ContactItem>
         <ContactItem>
           <ContactSpan>Github</ContactSpan>
@@ -29,7 +29,7 @@ export const Contact = () => {
             target="_blank"
             rel="noopender noreferrer"
           >
-            https://github.com/sunghyun-biblee
+            github.com/sunghyun-biblee
           </a>
         </ContactItem>
         <ContactItem>
@@ -43,29 +43,31 @@ export const Contact = () => {
           </a>
         </ContactItem>
       </ContactList>
-    </Article>
+    </div>
   );
 };
 const ContactSpan = styled.span`
   font-weight: 600;
-  width: 80px;
+  width: 75px;
   display: inline-block;
   margin-right: 0.7rem;
   &::after {
-    content: ".";
-    font-size: 1.9rem;
-    height: 10px;
-    color: rgb(59, 130, 246);
+    content: " ";
+    width: 5px;
+    height: 5px;
+    background-color: rgb(59, 130, 246);
+    border: none;
+    border-radius: 100%;
+    margin-left: 3px;
     display: inline-block;
-    padding: 0px 1px;
   }
 `;
 const ContactList = styled.ul`
-  display: flex;
-  justify-content: end;
+  margin-top: 0.5rem;
 `;
 const ContactItem = styled.li`
   transition: all 0.3s;
+  padding: 6px 0px;
 
   button {
     margin-right: 5px;

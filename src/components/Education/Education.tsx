@@ -21,13 +21,13 @@ const eductaionArray = [
 ];
 export const Education = () => {
   return (
-    <article className="mt-[1rem]">
+    <Article className="pt-[2.8rem]">
       <Title className="pb-2 border-b-2 border-blue-400">Education</Title>
-      <ul className="mt-[1rem]">
+      <ul className="mt-[0.5rem]">
         {eductaionArray.map((item, index) => (
           <EducationItem item={item} key={item.title + index}></EducationItem>
         ))}
       </ul>
-    </article>
+    </Article>
   );
 };

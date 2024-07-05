@@ -14,8 +14,10 @@ function App() {
       <div>
         <section className="max-w-[760px] w-[100%] font-pretendard ">
           <Introduce />
-          <Contact />
-          <Skill />
+          <Article className="flex justify-between">
+            <Contact />
+            <Skill />
+          </Article>
           <Projects />
           <Education />
         </section>
@@ -24,14 +26,16 @@ function App() {
   );
 }
 export const Article = styled.article`
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
 `;
+
 export const Title = styled.h1`
-  margin-bottom: 1.3rem;
-  font-size: 2.7rem;
+  font-size: 2.3rem;
   line-height: 2.5rem;
   font-weight: 700;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid rgb(96, 165, 250);
+
   &::after {
     content: ".";
     color: rgb(96, 165, 250);

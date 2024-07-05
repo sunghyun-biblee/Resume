@@ -4,24 +4,30 @@ import styled from "styled-components";
 
 export const Introduce = () => {
   return (
-    <article className="mt-[4rem]">
-      <Title>
+    <article>
+      <h1 className="text-[2.7rem] font-bold leading-[2.75rem] pb-3">
         <Span className="text-gray-600 py-1 inline-block">안녕하세요</Span>
         <br />
         꾸준히 우상향할 개발자 조성현
         <Span className="text-gray-600 pl-1 inline-block">입니다</Span>
-      </Title>
-      <p className="leading-7 tracking-tight text-base py-2 border-t-2 border-blue-400/70">
-        개발자로 성장하는 과정에서 처음 마주하는 기술들에 시간이 걸리더라도
-        외우려 하지 않고 최대한 이해하여 사용하는 것을 선호 합니다.
-        <span className="py-1 inline-block">
-          프로젝트 진행 중 발생하는 문제에 대해 회피하지 않고 팀원들과 소통하여
-          해결하며, 일정과 리소스를 고려하여 우선순위를 유연하게 조정하고,
-          팀원들의 공감을 바탕으로 프로젝트를 끝까지 마무리합니다.
+      </h1>
+      <div className="leading-7 tracking-tight text-base py-2 border-t-2 border-blue-400/70 break-keep">
+        <span>
+          개발자로 성장하는 과정에서 React 와 같은 프론트엔드 프레임워크를
+          학습할 때, 단순한 암기보다는 컴포넌트 라이프사이클, 상태 관리와 같은
+          핵심 개념을 이해하고 응용하는 것을 중요시합니다
         </span>
-        이런 경험을 바탕으로 배움에 대한 열정을 잃지 않고 꾸준한 노력을 기반으로
-        멀티캠퍼스 웹 개발자 수료과정에서 개인 최우수상 을 수상했습니다
-      </p>
+        <span className="py-1 inline-block">
+          프로젝트 진행 중 발생하는 버그 및 이슈를 식별하고, 디버깅 과정을 통해
+          백엔드 이슈로 확인된 경우, 원인 분석과 결과 보고를 명확히 전달한 후,
+          팀원들과 적극적으로 소통하여 문제해결에 도움이 될 수 있도록
+          기여합니다.
+        </span>
+        <span>
+          인터렉티브한 웹 디자인과 제이콥의 법칙을 활용하여 UI/UX 디자인을
+          구현하는 것을 좋아합니다
+        </span>
+      </div>
     </article>
   );
 };
