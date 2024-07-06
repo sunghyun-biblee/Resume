@@ -2,6 +2,11 @@ import { Skillbox } from "components/Skill/Skill";
 import React from "react";
 import styled from "styled-components";
 
+type Trouble = {
+  troubleTitle: string;
+  trouble: string;
+  solution: string;
+};
 interface projectItemType {
   title: string;
   summary: string;
@@ -13,12 +18,15 @@ interface projectItemType {
   skills: string[];
   functions: string[];
   date: string;
+  troubleShooting: Trouble[] | null;
 }
 type IProejctItem = {
   item: projectItemType;
   index: number;
 };
 export const ProejctItem = ({ item, index }: IProejctItem) => {
+  const path = item.github?.split("https://")[1];
+  console.log(path);
   const renderText = (item: projectItemType) => {
     switch (item.personnel.length) {
       case 1:
@@ -39,7 +47,7 @@ export const ProejctItem = ({ item, index }: IProejctItem) => {
   };
   return (
     <div
-      className={`mb-[1.5rem]
+      className={`mb-[1.7rem]
      ${index === 0 && "mt-[1rem]"}
      ${index !== 0 && "border-t-2 border-blue-100 pt-3"}
       px-2`}
@@ -70,40 +78,66 @@ export const ProejctItem = ({ item, index }: IProejctItem) => {
           </ProjectContent>
         </li>
         <li className="flex border-t-[1px] py-1">
-          <ProjectChapter>프로젝트 핵심기능</ProjectChapter>
+          <ProjectChapter>핵심기능 구현</ProjectChapter>
           <ProjectContent className="flex-col px-1 ">
             {item.functions.map((item, index) => (
               <FunctionsLi
                 key={item + index}
                 className="py-1 tracking-tight break-keep"
               >
-                {item}
+                <span>{item}</span>
               </FunctionsLi>
             ))}
           </ProjectContent>
         </li>
+
+        {item.troubleShooting && (
+          <li className="flex border-t-[1px] py-1">
+            <ProjectChapter>트러블 슈팅</ProjectChapter>
+            <ProjectContent className="flex-col px-1 ">
+              {item.troubleShooting.length >= 1 &&
+                item.troubleShooting.map((item, index) => (
+                  <FunctionsLi
+                    key={item.troubleTitle + index}
+                    className="py-1 tracking-tight break-keep"
+                  >
+                    <span>{item.troubleTitle}</span>
+                    <p className="text-sm font-normal mb-[0.25rem]">
+                      <span className="font-medium mr-[0.25rem]">[문제점]</span>
+                      {item.trouble}
+                    </p>
+                    <p className="text-sm font-normal">
+                      <span className="font-medium mr-[0.25rem]">[해결]</span>
+                      {item.solution}
+                    </p>
+                  </FunctionsLi>
+                ))}
+            </ProjectContent>
+          </li>
+        )}
+
         <li className="flex border-t-[1px] pt-1">
           <ProjectChapter>링크</ProjectChapter>
-          <ProjectContent className="flex-col px-1">
+          <ProjectContent className="justify-between px-1 items-center">
             {item.github && (
-              <li className="pb-1">
+              <li>
                 <ProjectLink
                   href={item.github}
                   target="_blank"
                   rel="noopender noreferrer"
                 >
-                  {item.github}
+                  {item.github?.split("https://")[1]}
                 </ProjectLink>
               </li>
             )}
             {item.deploy && (
-              <li className="pt-1">
+              <li>
                 <ProjectLink
                   href={item.deploy}
                   target="_blank"
                   rel="noopender noreferrer"
                 >
-                  {item.deploy}
+                  {item.deploy?.split("https://")[1]}
                 </ProjectLink>
               </li>
             )}
@@ -127,11 +161,11 @@ const ProjectChapter = styled.span`
   display: inline-block;
   font-size: 1.1rem;
   font-weight: 500;
-  width: 25%;
+  width: 24%;
 `;
 const ProjectContent = styled.ul`
   display: flex;
-  width: 75%;
+  width: 76%;
 `;
 const FunctionsLi = styled.li`
   list-style: disc;
