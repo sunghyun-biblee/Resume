@@ -11,15 +11,15 @@ export const EducationItem = ({ item }: IEducationType) => {
   return (
     <li className="mb-2 px-1 tracking-tight">
       <div className="flex justify-between">
-        <div className="flex items-end">
-          <h2 className="text-xl font-semibold">{item.title}</h2>
+        <div className="flex items-center">
+          <h2 className="text-base font-medium">{item.title}</h2>
           {item.summary && (
-            <span className="text-gray-500 inline-block ml-2 ">
+            <p className="text-gray-500 inline-block ml-2 text-sm">
               {item.summary}
-            </span>
+            </p>
           )}
         </div>
-        <span className="text-gray-400 font-light">{item.date}</span>
+        <span className="text-gray-400 font-light text-sm">{item.date}</span>
       </div>
     </li>
   );

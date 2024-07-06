@@ -67,7 +67,7 @@ const ContactList = styled.ul`
 `;
 const ContactItem = styled.li`
   transition: all 0.3s;
-  padding: 6px 0px;
+  padding: 5px 0px;
 
   button {
     margin-right: 5px;
@@ -75,11 +75,7 @@ const ContactItem = styled.li`
   a,
   button {
     color: rgb(107, 114, 128);
-
-    padding-bottom: 1px;
-    border-bottom: 1px solid rgba(107, 114, 128, 0.7);
     &:hover {
-      border-bottom: 1px solid rgb(59, 130, 246);
       cursor: pointer;
       color: rgb(59, 130, 246);
     }
