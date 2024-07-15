@@ -19,8 +19,8 @@ export const AboutMeTwo = () => {
           기여합니다.
         </AboutListItem>
         <AboutListItem>
-          인터렉티브한 웹 디자인과 제이콥의 법칙을 활용하여 UI/UX 디자인을
-          구현하는 것을 좋아합니다
+          사용자들의 시선을 집중시키고, 매력적인 인상을 남기기 위해 애니메이션과
+          트랜지션을 활용한 웹 디자인을 선호합니다
         </AboutListItem>
       </AboutMeList>
     </Article>
