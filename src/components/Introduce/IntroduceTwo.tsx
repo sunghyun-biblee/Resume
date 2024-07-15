@@ -6,7 +6,7 @@ import styled from "styled-components";
 export const IntroduceTwo = () => {
   return (
     <Article className="pt-[0px]">
-      <h1 className="text-3xl font-bold  pb-[3.5rem]">
+      <h1 className="text-3xl font-bold  pb-[3rem]">
         <span className="text-gray-600 py-1 inline-block font-light">
           안녕하세요
         </span>
@@ -24,7 +24,7 @@ export const IntroduceTwo = () => {
           <img
             src={resumeIMG}
             alt="resumeIMG"
-            className="w-[180px] h-[230px] "
+            className="w-[150px] h-[190px] "
           />
         </div>
         <div className="box-border">
@@ -47,7 +47,9 @@ export const IntroduceTwo = () => {
             </ContactItem>
             <ContactItem>
               <ContactSpan>Portfolio</ContactSpan>
-              <a href="#">biblee.portfolio.io (mock Link)</a>
+              <a href="https://bibleeportfolio.vercel.app/">
+                bibleeportfolio.vercel.app
+              </a>
             </ContactItem>
             <ContactItem>
               <ContactSpan>Phone</ContactSpan>
@@ -89,7 +91,7 @@ const ContactSpan = styled.span`
   }
 `;
 const ContactList = styled.ul`
-  height: calc(225px - 38px);
+  height: calc(190px - 38px);
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
