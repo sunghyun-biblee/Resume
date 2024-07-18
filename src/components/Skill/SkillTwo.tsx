@@ -31,16 +31,6 @@ export const SkillTwo = () => {
             Git
           </li> */}
         </SkillList>
-        <SkillList>
-          <li>
-            <span className="normal">JS(ES+6)</span>
-          </li>
-          <li>
-            <span className="normal text-orange-300">HTML/CSS</span>
-          </li>
-          <li>Git</li>
-          <li>Postman</li>
-        </SkillList>
       </div>
     </Article>
   );
