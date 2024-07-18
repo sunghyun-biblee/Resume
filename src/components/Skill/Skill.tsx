@@ -21,7 +21,7 @@ export const Skill = () => {
             </Skillbox>
           ))}
 
-          <ETCBox className="text-orange-800 font-semibold bg-[#FFE6D6] index7">
+          <ETCBox className="border-[1px] text-orange-800 font-semibold bg-[#FFE6D6] index7">
             Git
           </ETCBox>
         </SkilGrid>

@@ -40,7 +40,7 @@ function App() {
 }
 export const Article = styled.article`
   /* padding-top: 3rem; */
-  padding: 1.8rem 1.25rem 0rem 1.25rem;
+  padding: 1.5rem 0.5rem 0rem 0.5rem;
 `;
 
 export const Title = styled.h1`
