@@ -6,7 +6,7 @@ import styled from "styled-components";
 export const IntroduceTwo = () => {
   return (
     <Article className="pt-[0px]">
-      <h1 className="text-3xl font-bold  pb-[2.5rem]">
+      <h1 className="text-3xl font-bold  pb-[3rem]">
         <span className="text-gray-600 py-1 inline-block font-light">
           안녕하세요
         </span>
@@ -19,12 +19,12 @@ export const IntroduceTwo = () => {
       <h2 className="text-2xl font-semibold border-b-[1px] pb-1 border-blue-400">
         👨‍💻 Front-End Enginner
       </h2>
-      <div className="flex p-2">
+      <div className="flex p-3">
         <div className="mr-10 rounded-md border-[1px] overflow-hidden">
           <img
             src={resumeIMG}
             alt="resumeIMG"
-            className="w-[140px] h-[180px] "
+            className="w-[150px] h-[190px] "
           />
         </div>
         <div className="box-border">
@@ -91,8 +91,8 @@ const ContactSpan = styled.span`
   }
 `;
 const ContactList = styled.ul`
-  height: calc(180px - 38px);
-  margin-top: 0.25rem;
+  height: calc(190px - 38px);
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

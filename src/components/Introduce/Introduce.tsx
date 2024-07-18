@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 export const Introduce = () => {
   return (
-    <article className="px-5 pt-5">
-      <h1 className="text-4xl font-bold  pb-3">
+    <article>
+      <h1 className="text-[2.7rem] font-bold leading-[2.75rem] pb-3">
         <Span className="text-gray-600 py-1 inline-block">안녕하세요</Span>
         <br />
         꾸준히 우상향할 개발자 조성현
