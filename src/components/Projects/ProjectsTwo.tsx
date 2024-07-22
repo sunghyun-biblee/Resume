@@ -4,17 +4,23 @@ import { ProjectItemTwo } from "./ProjectItemTwo";
 import ClasshubIMG from "assets/image/projectMainImg/ClassHubMainpage2.jpg";
 import TripFixied from "assets/image/projectMainImg/TripFixiedMainpage2.jpg";
 import Myportfolio from "assets/image/projectMainImg/PortFolioMainpage.jpg";
+import { ProjectItemThree } from "./ProjectItemThree";
 export const ProjectsTwo = () => {
   return (
     <Article>
       <TitleTwo>Projects</TitleTwo>
       <ul>
         {ProejectArray.map((item, index) => (
-          <ProjectItemTwo
+          // <ProjectItemTwo
+          //   item={item}
+          //   index={index}
+          //   key={new Date().getDate() + index}
+          // ></ProjectItemTwo>
+          <ProjectItemThree
             item={item}
             index={index}
             key={new Date().getDate() + index}
-          ></ProjectItemTwo>
+          ></ProjectItemThree>
         ))}
       </ul>
     </Article>
@@ -26,7 +32,7 @@ const ProejectArray = [
     projectIMG: Myportfolio,
     title: "MyPortfolio",
     summary:
-      " 사용한 기술을 복습하고, 저만의 포트폴리오를 만들기 위해 웹 형태로 제작하였습니다",
+      "사용한 기술을 복습하고, 저만의 포트폴리오를 만들기 위해 웹으로 제작했습니다.",
     category: "solo",
     personnel: [1],
     role: "프론트엔드 담당 (기여도 100%)",
@@ -41,19 +47,21 @@ const ProejectArray = [
     date: "2024.06.04 ~ 2024.07",
     troubleShooting: null,
     projectText: [
-      "tailwind와 styled를 활용하여, 초기화면 FlipCard를 제작",
+      "tailwindCSS와 styled를 활용하여, 초기화면 FlipCard를 제작",
       "useRef,useCallback,useEffect를 활용하여 스크롤 애니메이션을 custom Hook으로 구현",
     ],
     projectTrouble: [
-      "lightHouse를 참조하여 초기화면 로딩속도 FCP(0.9s), LCP(1.8s)를 차세대 이미지형식(webp)으로 변경하여 FCP(0.7s),LCP(1.3s)로 절감",
+      "LightHouse를 참조하여 초기 로딩속도 FCP(0.9s), LCP(1.8s)를 차세대 이미지형식(webp)으로 변경하여 FCP(0.7s),LCP(1.3s)로 절감",
     ],
+    review:
+      "styled-components의 컴포넌트와 스타일 통합 및 조건부 동적 스타일링 기능을 활용하여 초기 화면 FlipCard 애니메이션을 제작했습니다. 또한 다양한 React-Hook을 통해 Custom Hook의 개념을 익혔습니다.",
     // [{ troubleTitle: "", trouble: "", solution: "" }]
   },
   {
     projectIMG: ClasshubIMG,
     title: "ClassHub",
     summary:
-      "온라인 학습시스템과 커뮤니티가 포함되어, 언제 어디서나 학습에 접근할 수 있는 플랫폼을 제공하기위한 서비스",
+      "온라인 학습시스템과 커뮤니티가 포함되어, 언제 어디서나 학습에 접근할 수 있는 플랫폼을 제공하기위한 서비스입니다.",
     category: "team",
     personnel: [1, 3],
     role: "프론트엔드 담당 (기여도: 30%)",
@@ -71,7 +79,7 @@ const ProejectArray = [
       "결제 기능 - PortOne(모든 결제를 지원하는 API)을 사용하여 테스트 결제 적용",
       "학습을 위한 영상 시청 페이지 - localStorage를 사용하여 이어듣기 기능을 제작",
     ],
-    date: "2024.05.01 ~ 2024.06.07",
+    date: "2024.05.01 ~ 2024.06.18",
     troubleShooting: [
       {
         troubleTitle: "스프링 시큐리티를 적용 및 배포 후 CORS 에러 발생 ",
@@ -96,12 +104,14 @@ const ProejectArray = [
       "스프링 시큐리티 및 배포 후 발생한 CORS 에러를 http-proxy-middleware를 사용하여 CORS 오류 해결",
       "커뮤니티 댓글이 실시간 업데이트되도록 React-Query의 Mutation을 활용하여 사용자 경험을 개선",
     ],
+    review:
+      "Typescript를 활용해, 타입을 명시함으로써 개발 과정에서 오류를 사전에 방지하고, 디버깅시간을 절약했습니다. React-Query의 Mutation을 활용해 서버와 클라이언트의 데이터를 동기화하여, 실시간으로 사용자에게 데이터를 제공함으로써 사용자의 경험을 향상시켰습니다.",
   },
   {
     projectIMG: TripFixied,
     title: "Trip_Fixie",
     summary:
-      "여행일정에 맞춰 관광지 정보, 축제정보, 숙소 정보를 제공하여 일정을 계획하기 쉽도록 도움을 제공하는 서비스",
+      "여행일정에 맞춰 관광지 정보, 축제정보, 숙소 정보를 제공하여 일정을 계획하기 쉽도록 도움을 제공하는 서비스입니다.",
     category: "team",
     personnel: [1, 1],
     role: "프론트엔드 담당 (기여도: 55%)",
@@ -130,5 +140,7 @@ const ProejectArray = [
     projectTrouble: [
       "무한스크롤로 인해 일일 API 호출 트래픽 초과 - 첫 데이터 호출 때 정보를 이중배열로 저장 후, 인덱스를 참조하여 필요한 데이터를 반환하는 방식으로 API 호출 횟수를 최소화 ",
     ],
+    review:
+      "React는 Virtual Dom을 사용해 보다 효율적으로 페이지를 렌더링합니다. 또한 React-Hook을 사용하여 Vanilla JS를 사용할때에 비해 짧은코드로 기능을 구현할 수 있었고, Framer-motion 라이브러리를 통해 생명주기를 시각적으로 확인할 수 있었습니다",
   },
 ];

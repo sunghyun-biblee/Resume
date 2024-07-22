@@ -27,63 +27,66 @@ type IProejctItem = {
   item: projectItemType;
   index: number;
 };
-
-export const ProjectItemTwo = ({ item, index }: IProejctItem) => {
+export const ProjectItemThree = ({ item, index }: IProejctItem) => {
   return (
-    <div
-      className={` py-2 flex flex-col  ${
-        index === 0 ? "mt-[0.5rem] mb-[1.5rem]" : "mt-[2rem]"
-      }`}
+    <li
+      className={`px-1 py-2 flex flex-col  ${
+        index === 0 ? "mt-[0.5rem]" : "pt-[3rem]"
+      } gap-2`}
     >
-      <section className="flex">
-        <article className="min-w-[190px] max-w-[190px] mr-1">
+      <div className="flex ">
+        <div className="min-w-[40%] max-w-[190px] ">
           <img
             src={item.projectIMG}
             alt="projectIMG"
-            className="w-[100%]  border-[1px]"
+            className="w-[100%] h-[100%] border-[1px]"
           />
-        </article>
-        <article className="flex flex-col w-[100%] pl-2">
+        </div>
+        <div className="flex flex-col w-[59%] pl-[1.5%] ">
           <div className="flex justify-between items-end border-b-[1px] border-zinc-200 pb-[1px]">
             <h1 className="text-[1.4rem] leading-[1.75rem] font-bold">
               {item.title}
             </h1>
             <span className="font-medium text-gray-500 ">{item.date}</span>
           </div>
-          <p className=" inline-block text-sm pt-2 tracking-tight ">
+          <p className=" inline-block text-[13px] leading-[1rem] pt-2 tracking-tight ">
             {item.summary}
           </p>
-          <ul className="flex text-sm text-blue-600 font-semibold pt-2 px-1">
+          <ul className="flex text-sm text-blue-600 font-semibold pt-2 px-1 gap-2 flex-wrap">
             {item.skills.map((data, index) => (
               <li key={data + index} className="tracking-wide mr-[2px]">
-                {data} {index === item.skills.length - 1 ? "" : ","}
+                {data} {index === item.skills.length - 1 ? "" : ""}
               </li>
             ))}
           </ul>
 
-          <ul className="pt-2">
+          <ul className="pt-1">
             {item.projectText.map((text, index) => (
               <ProjectTextLi key={text + index}>
                 <span className="block">✔</span>
-                <p>{text}</p>
+                <p className="text-sm ">{text}</p>
               </ProjectTextLi>
             ))}
             {item.projectTrouble &&
               item.projectTrouble.map((text, index) => (
                 <ProjectTextLi key={index + text} className={`font-medium `}>
                   <span className="inline-block">✔</span>
-                  <p>{text}</p>
+                  <p className="text-sm">{text}</p>
                 </ProjectTextLi>
               ))}
           </ul>
-        </article>
-      </section>
+        </div>
+      </div>
       {item.review && (
-        <span className="inline-block pt-1 tracking-tight font-medium border-blue-400  p-1 mt-1">
+        <p
+          className={`px-1 ${
+            index === 0 ? "mt-[0.5rem]" : "mt-[0.5rem]"
+          } tracking-tight`}
+        >
           ✍ {item.review}
-        </span>
+        </p>
       )}
-    </div>
+    </li>
   );
 };
 
@@ -92,7 +95,7 @@ const ProjectTextLi = styled.li`
   letter-spacing: -0.025rem;
   word-break: keep-all;
 
-  padding: 5px 0px;
+  padding: 5px 0;
   span {
     margin-right: 5px;
     color: rgb(96, 165, 250);

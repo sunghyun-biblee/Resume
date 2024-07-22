@@ -8,6 +8,7 @@ type Trouble = {
   solution: string;
 };
 interface projectItemType {
+  projectIMG: string | null;
   title: string;
   summary: string;
   category: string;
@@ -35,55 +36,57 @@ export const ProejctItem = ({ item, index }: IProejctItem) => {
       default:
         return (
           <>
-            <li className={` border-r-2 box-border pr-[1rem] mr-[1rem]`}>{`${
+            <li className={` border-r-2 box-border pr-[1rem] mr-[1rem] `}>{`${
               item.personnel[0] + item.personnel[1]
             }인 (프론트엔드 ${item.personnel[0]}명, 백엔드 ${
               item.personnel[1]
             }명)`}</li>
-            <li className="">{item.role}</li>
+            <li>{item.role}</li>
           </>
         );
     }
   };
   return (
     <div
-      className={`mb-[1.7rem]
-     ${index === 0 && "mt-[1rem]"}
+      className={`mb-[4rem]
+     ${index === 0 && "mt-[1.5rem]"}
      ${index !== 0 && "border-t-2 border-blue-100 pt-3"}
       px-2`}
     >
       <div className="flex justify-between items-end">
-        <h1 className="text-[1.75rem] leading-[2rem] font-bold">
+        <h1 className="text-[1.4rem] leading-[1.75rem] font-bold">
           {item.title}
         </h1>
         <span className="font-medium text-gray-500">{item.date}</span>
       </div>
       <span className="pt-2 inline-block">{item.summary}</span>
 
-      <ul className=" pt-[0.75rem] ">
+      <ul className=" pt-[0.75rem] text-base ">
         <li className="flex border-t-[1px] py-[6px]">
           <ProjectChapter>
             {item.category === "solo" ? "개인 프로젝트" : "팀 프로젝트"}
           </ProjectChapter>
-          <ProjectContent className=" items-center ">
+          <ProjectContent className="text-sm items-center ">
             {renderText(item)}
           </ProjectContent>
         </li>
-        <li className="flex border-t-[1px] py-2 items-center">
+        {/* <li className="flex border-t-[1px] py-2 items-center">
           <ProjectChapter>활용한 기술 스택</ProjectChapter>
           <ProjectContent className="gap-2  ">
             {item.skills.map((item, index) => (
               <Skillbox key={item + index}>{item}</Skillbox>
             ))}
           </ProjectContent>
-        </li>
-        <li className="flex border-t-[1px] py-1">
-          <ProjectChapter>핵심기능 구현</ProjectChapter>
-          <ProjectContent className="flex-col px-1 ">
+        </li> */}
+        <li className="flex border-t-[1px] py-2 ">
+          <ProjectChapter className="py-1 tracking-tighter">
+            핵심기능 구현
+          </ProjectChapter>
+          <ProjectContent className="flex-col px-1  ">
             {item.functions.map((item, index) => (
               <FunctionsLi
                 key={item + index}
-                className="py-1 tracking-tight break-keep"
+                className="py-1 tracking-tight break-keep text-[14px]"
               >
                 <span>{item}</span>
               </FunctionsLi>
@@ -92,17 +95,17 @@ export const ProejctItem = ({ item, index }: IProejctItem) => {
         </li>
 
         {item.troubleShooting && (
-          <li className="flex border-t-[1px] py-1">
+          <li className="flex border-t-[1px] py-2">
             <ProjectChapter>트러블 슈팅</ProjectChapter>
             <ProjectContent className="flex-col px-1 ">
               {item.troubleShooting.length >= 1 &&
                 item.troubleShooting.map((item, index) => (
                   <FunctionsLi
                     key={item.troubleTitle + index}
-                    className="py-1 tracking-tight break-keep"
+                    className="py-1 tracking-tight th"
                   >
                     <span>{item.troubleTitle}</span>
-                    <p className="text-sm font-normal mb-[0.25rem]">
+                    <p className="text-sm font-normal mb-[0.25rem] py-1">
                       <span className="font-medium mr-[0.25rem]">[문제점]</span>
                       {item.trouble}
                     </p>
@@ -116,7 +119,7 @@ export const ProejctItem = ({ item, index }: IProejctItem) => {
           </li>
         )}
 
-        <li className="flex border-t-[1px] pt-1">
+        <li className="flex border-t-[1px] pt-2">
           <ProjectChapter>링크</ProjectChapter>
           <ProjectContent className="justify-between px-1 items-center">
             {item.github && (
@@ -159,18 +162,21 @@ const ProjectLink = styled.a`
 `;
 const ProjectChapter = styled.span`
   display: inline-block;
-  font-size: 1.1rem;
-  font-weight: 500;
-  width: 24%;
+  letter-spacing: -0.03rem;
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 115px;
 `;
 const ProjectContent = styled.ul`
   display: flex;
-  width: 76%;
 `;
 const FunctionsLi = styled.li`
-  list-style: disc;
   font-weight: 500;
-  &::marker {
-    color: #5ea3ec;
+  &.th {
+    list-style: disc;
+    &::marker {
+      display: block;
+      color: #5ea3ec;
+    }
   }
 `;
